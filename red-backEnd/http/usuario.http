@@ -1,0 +1,35 @@
+#### Todas las usuarioes
+GET http://localhost:9090/api/usuario
+
+
+#### Usuario por id
+GET http://localhost:9090/api/usuario/1
+
+
+#### valida usuario
+GET http://localhost:9090/api/usuario/auth/gaspar@algo.com/123
+
+
+### Agregar usuario
+POST http://localhost:9090/api/usuario
+Content-Type: application/json
+
+{
+    "nombre": "x",
+    "correo": "x",
+    "contrasena": "x"
+}
+
+#### Actualizar usuario
+PUT http://localhost:9090/api/usuario/3
+Content-Type: application/json
+
+{    
+    "nombre": "y",
+    "correo": "y",
+    "contrasena": "y"
+}
+
+
+#### Borrar usuario
+DELETE http://localhost:9090/api/usuario/3
