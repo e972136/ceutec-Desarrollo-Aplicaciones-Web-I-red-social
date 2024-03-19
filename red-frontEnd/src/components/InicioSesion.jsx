@@ -31,7 +31,10 @@ export const InicioSesion = () => {
     try {
       const result = await axios.get(url);
       const resultData = (await result).data;
-      navigate('/historial');
+      const resultEstimacion = resultData[0];  
+      const id = resultEstimacion.id;
+      console.log(id);
+      navigate(`/historial/${id}`);
     } catch (err) {
       setInicioSesion("Error de Inicio de Sesion");
     }
@@ -45,25 +48,25 @@ export const InicioSesion = () => {
 
         <fieldset>
 
-          <div class="form-group">
-            <label for="patito">Email address</label>
+          <div className="form-group">
+            <label >Correo</label>
             <input type="email"
-              class="form-control"
+              className="form-control"
               name="correo"
               
               onChange={onChangeHandler}
             />
           </div>
-          <div class="form-group">
-            <label for="clave">Password</label>
+          <div className="form-group">
+            <label >Password</label>
             <input
               type="password"
-              class="form-control"
+              className="form-control"
               name="contrasena"
               onChange={onChangeHandler}
             />
           </div>
-          <button type="submit" class="btn btn-primary">Inicio de sesion</button>
+          <button type="submit" className="btn btn-primary">Inicio de sesion</button>
         </fieldset>
       </form>
       <div> {inicioSesion} </div>

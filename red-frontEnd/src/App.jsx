@@ -14,7 +14,7 @@ function App() {
  <BrowserRouter>
         <Routes>
             <Route path='/' element={<InicioSesion/>}>  </Route>
-            <Route path='/historial' element={<Historial/>}>  </Route>
+            <Route path='/historial/:id' element={<Historial/>}>  </Route>
         </Routes>
       </BrowserRouter>
     </>
